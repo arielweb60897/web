@@ -14,6 +14,7 @@
   text-align: center;
   display: inline-block;
   margin: 20px 0;
+  font-size: 36px;
 }
 .title_line {
   width: 500px;
@@ -311,6 +312,7 @@ hr {
 .menuButton {
   color: #f4e9e3;
   text-align: center;
+  margin-top: 20px;
 }
 .menuButton img {
   width: 100%;
@@ -327,9 +329,9 @@ hr {
   max-width: 1200px;
   margin: auto;
 }
-.shop_menu h3,
-.main_title h3 {
+.shop_menu h3 {
   font-size: 36px;
+  margin-bottom: 10px;
 }
 /* .shop_menu .line {
   width: 500px;
@@ -386,7 +388,7 @@ hr {
 .shop_menu .price,
 .coffee_item,
 .coffee_price {
-  font-weight: lighter;
+  font-weight: 300;
 }
 .shop_menu .price span,
 .coffee_price span {
@@ -397,5 +399,5 @@ hr {
 .menu_sweet {
   display: flex;
   justify-content: space-around;
-  margin-bottom: 166px;
+  margin-bottom: 100px;
 }
