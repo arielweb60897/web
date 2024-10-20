@@ -306,21 +306,96 @@ hr {
   right: 20px; /* 距離右側 20px */
   z-index: 100; /* 確保在最上層 */
 }
-/* -------------------menu------------------------- */
+/* -------------------菜單------------------------ */
 
 .menuButton {
   color: #f4e9e3;
-  background-color: #ff0;
   text-align: center;
-  /* gap: 30px; */
 }
 .menuButton img {
   width: 100%;
   height: 50px;
 }
-.menuButton > #menu_button {
+.menuButton > .menu_button {
   border: 1px solid #756659;
   border-radius: 50px;
   padding: 10px 39px;
-  /* gap: 30px; */
+  cursor: pointer;
+  margin: 0 10px;
+}
+.shop_menu {
+  max-width: 1200px;
+  margin: auto;
+}
+.shop_menu h3,
+.main_title h3 {
+  font-size: 36px;
+}
+/* .shop_menu .line {
+  width: 500px;
+  padding: 0 10px;
+  border-top: 2px solid #756659;
+  box-sizing: border-box;
+} */
+.coffee_item {
+  display: flex;
+  flex: 1;
+}
+.coffee_name {
+  flex: 1;
+}
+.menu_coffee .hot,
+.menu_coffee .cold {
+  width: 10px;
+  height: 10px;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 16px;
+  /* text-align: center; */
+  height: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu_coffee .hot {
+  background-color: #ff6767;
+  margin-right: 10px;
+}
+.menu_coffee .cold {
+  background-color: #67c5ff;
+}
+.shop_menu .txt {
+  display: inline-block;
+  font-weight: bold;
+}
+.shop_menu li {
+  list-style: none;
+  padding-left: 0;
+  font-size: 24px;
+  /* display: inline-block; */
+  font-family: "Noto Serif JP";
+  color: #51453b;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin-bottom: 17px;
+}
+.coffee_price {
+  flex: 1;
+}
+.shop_menu .price,
+.coffee_item,
+.coffee_price {
+  font-weight: lighter;
+}
+.shop_menu .price span,
+.coffee_price span {
+  margin-right: 10px;
+}
+.menu_coffee,
+.menu_food,
+.menu_sweet {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 166px;
 }
