@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap");
 body {
-  margin: 0 ;
+  margin: 0;
   padding: 0;
   font-family: "Noto Serif JP", serif;
   font-size: 100%;
@@ -54,7 +54,7 @@ header {
   height: 500px;
   margin: 0 auto;
   /* background-color: #ff0; */
-    overflow: hidden;
+  overflow: hidden;
 }
 .dou {
   display: flex;
@@ -94,6 +94,7 @@ header {
   position: relative;
   /* animation: slider 5s 3; */
   /* overflow: hidden; */
+  left: 0;
 }
 .img6 img {
   width: 100%;
@@ -170,123 +171,45 @@ header {
   padding: 2px;
   margin: 0;
 }
-/*
-.main_title {
-  display: flex;
-  align-items: center; 
-  justify-content: center; 
-  max-width: 1440px;
-  z-index: 1;
-}
-.main_title h1 {
-  padding: 0 20px;
-  margin: 0;
-  color: #756659;
-  text-align: center;
-  display: inline-block;
-  margin: 20px 0;
-}
-.title_line {
-  width: 500px;
-  padding: 0 10px;
-  border-top: 2px solid #756659;
-  box-sizing: border-box;
-}
-.main {
-  max-width: 1020px;
-  display: flex;
-  margin: auto;
-}
-.main_menu {
-  position: relative;
-  display: inline-block;
-  margin: 5px;
-}
-.title {
-  position: absolute;
-  bottom: 0;
-  background-color: #a8a8a848;
-  color: #fff;
-  height: 100px;
-  width: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-family: "Noto Serif JP";
-  font-size: 24px;
-  font-weight: bold;
+/* 手機螢幕（max-width: 600px） */
+@media only screen and (max-width: 600px) {
+  header {
+    /* flex-direction: column; */
+    /* align-items: center; */
+  }
+
+  nav {
+    display: none; /* 可以隱藏菜單，並使用漢堡菜單取代 */
+  }
+
+  .cover {
+    height: auto; /* 讓圖片高度自動調整 */
+  }
+
+  .img6 img {
+    width: 100%; /* 圖片寬度調整為螢幕寬度 */
+    height: auto;
+  }
+
+  /* .main_menu {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .contact-info {
+    font-size: 14px; 減小字體大小
+  } */
 }
 
-.contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: center; 
+/* 平板電腦螢幕（max-width: 1024px） */
+/* @media only screen and (max-width: 1024px) {
+  .main {
+    display: flex;
+    flex-direction: column; 讓主選單在較窄的螢幕上排列成一列 
+    align-items: center;
+  }
 
-  margin-right: 5px;
-}
-.contact h3 {
-  margin: 3px 10px;
-}
-.contact p {
-  margin: 15px;
-  font-weight: lighter;
-}
-.contact i {
-  font-size: 1.2em;
-}
-.contact a {
-  color: #756659;
-  text-decoration: none;
-}
-.contact a:hover {
-  color: blue;
-  text-decoration: underline;
-}
-/* .contact-info, .logo {
-  flex: 1;
-} 
-.line {
-  max-width: 580px;
-  flex: 1;
-  position: relative;
-  border-top: 2px solid #756659;
-  box-sizing: border-box;
-}
-.contact-logo {
-
-  margin-left: auto; 
-}
-
-.sns_icon a {
-  color: #756659;
-  font-size: 1.6em;
-  margin: 0 3px;
-}
-.sns {
-  display: flex;
-  flex-direction: column; 
-  align-items: center;
-}
-
-.sns_logo {
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-}
-
-footer {
-  height: 270px;
-  background-color: #756659;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-footer p {
-  color: #f4e9e3;
-  max-width: 1197px;
-  margin: 0;
-  margin-top: auto;
-  margin-bottom: 20px;
-  text-align: center;
-}
+  .main_menu {
+    width: 80%;
+  }
+} */

@@ -29,6 +29,42 @@ $(function () {
     $(`.dou li`).not(this).removeClass("clicked");
     timer = setInterval(moveToNext, 5000); // 重置計時器
   });
+  // 點擊下一頁按鈕
+  $(".naxt").click(function () {
+    clearInterval(timer); // 停掉計時器
+    $(`.img6`).animate({
+      left: divWidth * index * -1,
+    });
+
+    if (index < imgCount - 1) {
+      // 如果還有下一張圖片
+      index++;
+    } else {
+      index = 0; // 循環回第一張
+    }
+    // updateWidths(); // 更新圖片位置
+    // $(this).addClass("clicked");
+    // $(`.dou li`).not(this).removeClass("clicked");
+    timer = setInterval(moveToNext, 5000); // 重置計時器
+  });
+
+  // 點擊上一頁按鈕
+  $(".pre").click(function () {
+    clearInterval(timer); // 停掉計時器
+    $(`.img6`).animate({
+      left: divWidth * index * -1,
+    });
+    if (index > 0) {
+      // 如果還有上一張圖片
+      index--;
+    } else {
+      index = imgCount - 1; // 循環回最後一張
+    }
+    // updateWidths(); // 更新圖片位置
+    // $(this).addClass("clicked");
+    // $(`.dou li`).not(this).removeClass("clicked");
+    timer = setInterval(moveToNext, 5000); // 重置計時器
+  });
   function moveToNext() {
     // 控制 index 只能介於 0 ~ 6
     if (index < imgCount - 1) {
@@ -46,25 +82,4 @@ $(function () {
     $(`.dou li:eq(${index})`).addClass("clicked");
     $(`.dou li`).not(`:eq(${index})`).removeClass("clicked");
   }
-  // 點擊下一頁按鈕
-  $(".naxt").click(function () {
-    if (index < imgCount - 1) {
-      // 如果還有下一張圖片
-      index++;
-    } else {
-      index = 0; // 循環回第一張
-    }
-    updateWidths(); // 更新圖片位置
-  });
-
-  // 點擊上一頁按鈕
-  $(".pre").click(function () {
-    if (index > 0) {
-      // 如果還有上一張圖片
-      index--;
-    } else {
-      index = imgCount - 1; // 循環回最後一張
-    }
-    updateWidths(); // 更新圖片位置
-  });
 });
