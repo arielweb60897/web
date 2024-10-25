@@ -402,3 +402,56 @@ hr {
   margin-bottom: 100px;
 }
 /* -------------------------貓宅小物------------------------- */
+.product-info {
+  /* background-color: #f0f; */
+  display: flex;
+}
+.left_aside {
+  /* background-color: #ff0; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding-top: 80px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.product_item {
+  margin: 5px 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+.right_list {
+  /* background-color: #0ff; */
+  flex: 5;
+}
+.product-listTop {
+  /* background-color: #00f; */
+  display: flex;
+  gap: 80%;
+  margin: 0 20px;
+  align-items: center;
+}
+.product_item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 16px; /* 控制項目間距 */
+}
+/* .product_list {
+
+} */
+
+.product_list a {
+  color: #51453b;
+  text-decoration: none;
+}
+.Product-title {
+  margin-top: 16px;
+  font-size: 24px;
+  font-weight: 100;
+}
+.product_price {
+  font-size: 16px;
+  font-weight: bold;
+}

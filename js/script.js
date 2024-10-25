@@ -1,3 +1,5 @@
+// --------------slider------------------
+
 $(function () {
   //  .cover 的寬度
   let divWidth = $(".cover").width();
@@ -83,3 +85,12 @@ $(function () {
     $(`.dou li`).not(`:eq(${index})`).removeClass("clicked");
   }
 });
+
+// --------------toTop------------------
+$(function () {
+  $("#toTop").click(function () {
+    $("html, body").animate({ scrollTop: 0 }, 800); // 800 表示動畫持續時間（毫秒）
+  });
+});
+
+// -------------------慢慢浮現----------------------
