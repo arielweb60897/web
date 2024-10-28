@@ -405,6 +405,8 @@ hr {
 .product-info {
   /* background-color: #f0f; */
   display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 .left_aside {
   /* background-color: #ff0; */
@@ -413,17 +415,23 @@ hr {
   align-items: center;
   flex: 1;
   padding-top: 80px;
-  font-size: 24px;
-  font-weight: bold;
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: lighter;
+  margin-bottom: 10px;
 }
 .product_item {
-  margin: 5px 0;
-  font-size: 24px;
-  font-weight: bold;
+  margin-top: 10px;
+  /* background-color: #c0c; */
+}
+.product_item:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .right_list {
   /* background-color: #0ff; */
   flex: 5;
+  margin-bottom: 50px;
 }
 .product-listTop {
   /* background-color: #00f; */
@@ -432,26 +440,77 @@ hr {
   margin: 0 20px;
   align-items: center;
 }
-.product_item {
+.product-listTop img {
+  margin-left: 10px;
+}
+.product_all {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   gap: 16px; /* 控制項目間距 */
 }
-/* .product_list {
-
-} */
+.product_list {
+  margin-bottom: 10px;
+  /* background-color: #f0f; */
+}
 
 .product_list a {
   color: #51453b;
   text-decoration: none;
 }
+.product_list .Product-title:hover {
+  text-decoration: underline;
+}
+/* .Product-txt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  } */
 .Product-title {
+  /* background-color: #f0f; */
   margin-top: 16px;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 100;
 }
 .product_price {
+  /* background-color: #f00; */
   font-size: 16px;
   font-weight: bold;
+}
+/* -------------------------貓宅故事------------------------- */
+.story_main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.story_all {
+  background-color: #f0f;
+  /* display: flex; */
+}
+.story_list {
+  background-color: #f00;
+  width: 370px;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  /* gap: 16px; */
+}
+.story-title {
+  display: flex;
+}
+.Male {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: #008ffd;
+  color: #f4e9e3;
+  font-size: 12px;
+  font-family: "Noto Serif JP";
+  padding: 6px;
+  height: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
