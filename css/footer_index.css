@@ -195,6 +195,7 @@ header {
   /* gap: 10px; 
   margin: auto; */
   margin-right: 5px;
+  margin-bottom: 100px;
 }
 .contact h3 {
   margin: 3px 10px;
@@ -260,4 +261,27 @@ footer p {
   margin-top: auto; /* 讓 p 自動推到 footer 底部 */
   margin-bottom: 20px;
   text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: start; */
+    align-items: start;
+    width: 100%;
+    /* background-color: #0ff; */
+    margin-top: 80px;
+  }
+  .contact-info {
+    /* background-color: #0f0; */
+    text-align: left;
+  }
+  .sns {
+    margin: 20px 0;
+    /* background-color: #ff0; */
+    width: 100%;
+  }
+  .contact-logo {
+    display: none;
+  }
 }

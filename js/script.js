@@ -1,5 +1,4 @@
 // --------------slider------------------
-
 $(function () {
   //  .cover 的寬度
   let divWidth = $(".cover").width();
@@ -125,5 +124,77 @@ $(function () {
     $("html, body").animate({ scrollTop: 0 }, 800); // 800 表示動畫持續時間（毫秒）
   });
 });
+// -------------------hamburger----------------------
+$(function () {
+  $(".hamburger").click(function () {
+    $(this).toggleClass("active");
+    $(".nav-menu").toggleClass("active");
+    console.log("Hamburger clicked!");
+  });
+});
 
 // -------------------慢慢浮現----------------------
+$(function () {
+  $(".area:nth-child(1)").addClass("visible");
+  let throttleTimeout;
+  let showHeight = 100;
+
+  // $(window).scroll(function () {
+  //   $(".area").each(function () {
+  //     let setThis = $(this); // this 裡面的 this
+  //     let areaTop = setThis.offset().top; // 物件和螢幕上面的距離
+  //     // console.log(areaTop); //0 900 1800 2700 3600
+
+  //     //
+  //     if ($(window).scrollTop() >= areaTop + showHeight - $(window).height()) {
+  //       //   setThis.animate({css}, 毫秒);
+  //       // setThis.stop().animate({ opacity: 1 }, 400);
+  //       setThis.addClass("visible");
+  //     } else {
+  //       // setThis.stop().animate({ opacity: 0 }, 1000);
+  //       setThis.removeClass("visible");
+  //     }
+  //   });
+  function handleScroll() {
+    $(".area").each(function (index) {
+      const setThis = $(this);
+      const areaTop = setThis.offset().top;
+
+      // 計算滾動條位置是否已經達到顯示條件
+      if ($(window).scrollTop() >= areaTop + showHeight - $(window).height()) {
+        // 添加延遲顯示效果
+        setTimeout(() => {
+          setThis.addClass("visible");
+        }, index * 200); // 每張圖片延遲 200 毫秒
+      } else {
+        // 滾動條離開區域後移除 visible 類別
+        setThis.removeClass("visible");
+      }
+    });
+  }
+  // 使用 throttle 限制滾動事件的觸發頻率
+  $(window).scroll(function () {
+    if (!throttleTimeout) {
+      throttleTimeout = setTimeout(() => {
+        handleScroll();
+        throttleTimeout = null;
+      }, 200); // 每隔 200 毫秒觸發一次
+    }
+  });
+
+  // 初始化：頁面加載時直接觸發一次
+  handleScroll();
+});
+
+// =============滑鼠滑入效果(可略)============
+// $(document).ready(function () {
+//   $(".main_menu").on("mouseenter", function () {
+//     // 找到當前元素內的 .title，並設置 opacity 為 1
+//     $(this).find(".title").css("opacity", "1");
+//   });
+
+//   $(".main_menu").on("mouseleave", function () {
+//     // 找到當前元素內的 .title，並設置 opacity 為 0
+//     $(this).find(".title").css("opacity", "0");
+//   });
+// });

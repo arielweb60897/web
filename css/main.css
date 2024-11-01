@@ -2,30 +2,36 @@
 
 .main_title {
   display: flex;
-  align-items: center; /* 垂直置中 */
-  justify-content: center; /* 水平置中 */
+  align-items: center;
+  justify-content: center;
   max-width: 1440px;
-  z-index: 1;
+  margin: 0 auto;
+  padding: 10px 0; /* 上下內距 */
 }
 .main_title h1 {
-  padding: 0 20px;
+  /* padding: 0 20px; */
   margin: 0;
   color: #756659;
   text-align: center;
-  display: inline-block;
+  /* display: inline-block; */
   margin: 20px 0;
   font-size: 36px;
+  width: 30%;
 }
 .title_line {
   width: 500px;
   padding: 0 10px;
   border-top: 2px solid #756659;
   box-sizing: border-box;
+  flex-grow: 1;
+  box-sizing: border-box;
+  margin: 0 5%; /* 線的左右外距 */
 }
 .main {
   max-width: 1020px;
   display: flex;
   margin: auto;
+  margin-bottom: 300px;
 }
 .main_menu {
   position: relative;
@@ -33,9 +39,10 @@
   /* width: 100%; */
   /* max-width: 340px; */
   margin: 5px;
+  overflow: hidden; /* 確保子元素不會超出父元素 */
 }
 .title {
-  position: absolute;
+  /* position: absolute;
   bottom: 0;
   background-color: #a8a8a848;
   color: #fff;
@@ -44,12 +51,80 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; */
   font-family: "Noto Serif JP";
   font-size: 24px;
   font-weight: bold;
+  /* ===== */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8)
+  ); /* 漸層背景 */
+  opacity: 0;
+  /* border-radius: 8px; */
+  transform: translateY(30px);
+  transition: 0.3s ease;
 }
 
+.main_menu:hover .title {
+  opacity: 1;
+  transform: translateY(0);
+}
+.main_menu img {
+  transition: filter 0.3s ease; /* 添加平滑過渡 */
+}
+
+.main_menu:hover img {
+  filter: brightness(0.5); /* 懸停時使圖片變暗 */
+}
+
+/* 手機螢幕（max-width: 600px） */
+@media only screen and (max-width: 600px) {
+  .main_title h1 {
+    /* font-size: 24px; */
+    width: 80%;
+  }
+  .title_line {
+    width: 30%; /* 在小屏幕上縮小 */
+  }
+  .main {
+    flex-direction: column; /* 讓主容器在手機上垂直排列 */
+    align-items: center; /* 中央對齊 */
+  }
+
+  .main_menu {
+    width: 100%; /* 寬度為100%以填滿螢幕 */
+    max-width: none; /* 取消固定寬度限制 */
+  }
+  .main img {
+    width: 100%;
+    height: 500px;
+    /* 確保圖片填滿容器並裁切多餘部分 */
+    object-fit: cover;
+    /* 圓角效果 */
+    border-radius: 8px;
+  }
+}
+.area {
+  opacity: 0;
+  transition: 0.6s ease-in-out; /* 過渡時間和效果 */
+  transform: translateY(-30px); /* 預設往上偏移一點 */
+}
+
+.area.visible {
+  opacity: 1;
+  transform: translateY(0); /* 恢復到原位 */
+}
 /* about */
 
 /* --------------關於貓宅------------- */
@@ -83,27 +158,31 @@
   flex: 1;
   position: relative;
   padding: 20px;
+  margin-bottom: 100px;
 }
 .aboutCat img {
   height: 315px;
   width: 315px;
 }
-#about_img01,
-#about_img02 {
+.about_img01,
+.about_img02 {
   position: absolute;
   width: 336px; /* 控制圖片寬度，根據需要調整 */
 }
 
-#about_img01 {
+.about_img01 {
   right: 20px;
   top: 50px; /* 控制第一張圖片的位置 */
   z-index: 1; /* 設置圖片層級，這張圖片會在第二張之上 */
 }
 
-#about_img02 {
+.about_img02 {
   right: 200px;
   top: 280px; /* 控制第二張圖片的位置，稍微向下移動 */
   z-index: 2; /* 設置較低的層級，這張圖片會在第一張圖片下方 */
+}
+/* 手機螢幕（max-width: 600px） */
+@media only screen and (max-width: 600px) {
 }
 /* --------------關於 貓宅環境------------- */
 .catHouse {
@@ -117,21 +196,21 @@
   width: 100%; /* 容器的寬度 */
   height: 700px; /* 根據需求設置合適的高度 */
 }
-#cathouse_img01,
-#cathouse_img02,
-#cathouse_img03 {
+.cathouse_img01,
+.cathouse_img02,
+.cathouse_img03 {
   position: absolute;
   width: 302px;
 }
-#cathouse_img01 {
+.cathouse_img01 {
   top: -50px;
   left: 0; /* 第一張圖靠左 */
 }
-#cathouse_img02 {
+.cathouse_img02 {
   top: 70px;
   left: 320px; /* 第二張圖稍微右移 */
 }
-#cathouse_img03 {
+.cathouse_img03 {
   top: 130px;
   left: 640px; /* 第三張圖再往右移 */
 }

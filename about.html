@@ -27,43 +27,50 @@
   </head>
   <body>
     <header>
-      <div class="logo">
+      <div class="logo-group">
         <img src="./assets/logo_2_br 1.png" alt="" />
         <div class="logo_txt">
-          <span id="logo_txt1">Cat Cafe</span>
-          <span id="logo_txt2">Meow House</span>
+          <span class="logo_txt1">Cat Cafe</span>
+          <span class="logo_txt2">Meow House</span>
         </div>
       </div>
       <nav>
+        <div class="hamburger">
+          <div class="nav-line"></div>
+          <div class="nav-line"></div>
+          <div class="nav-line"></div>
+        </div>
         <div class="nav-menu">
-          <div class="nav-menu">
-            <a href="about.html">關於貓宅</a>
-            <a href="new.html">最新消息</a>
-            <a href="menu.html">貓宅菜單</a>
-            <a href="story.html">貓宅故事</a>
-            <a href="product.html">貓宅小物</a>
-            <a href="contact.html">線上訂位</a>
-          </div>
+          <a href="about.html">關於貓宅</a>
+          <a href="news.html">最新消息</a>
+          <a href="menu.html">貓宅菜單</a>
+          <a href="story.html">貓宅故事</a>
+          <a href="product.html">貓宅小物</a>
+          <a href="contact.html">線上訂位</a>
         </div>
       </nav>
 
-      <div class="item">
-        <button>
-          <img src="./assets/icon-cart.png" alt="" />
-          購物車
-        </button>
-        <button>
-          <img src="./assets/icon-account.png" alt="" />
-          會員登入
-        </button>
-      </div>
-      <div class="lang">
-        <button id="lang_button">CN</button>
-        <button id="lang_button">JP</button>
+      <div class="icon-group">
+        <div class="item">
+          <button>
+            <i class="fa-solid fa-cart-shopping icon-color"></i>
+            <!-- <img src="./assets/icon-cart.png" alt=""> -->
+            <span>購物車</span>
+          </button>
+          <button>
+            <i class="fa-solid fa-user icon-color"></i>
+            <!-- <img src="./assets/icon-account.png" alt=""> -->
+            <span> 會員登入</span>
+          </button>
+        </div>
+        <div class="lang">
+          <button id="lang_button">CN</button>
+          <button id="lang_button">JP</button>
+        </div>
       </div>
     </header>
     <!-- 輪播 -->
-    <div class="cover">
+    <div class="cover area">
       <div class="pre">
         <img src="./assets/icon-pre.png" alt="" />
       </div>
@@ -84,8 +91,8 @@
         <img src="./assets/contact-cover06.png" alt="" />
       </div>
     </div>
-    <div class="container">
-      <div class="aboutCat">
+    <div class="container area">
+      <div class="aboutCat area">
         <div class="left_title">
           <h1>關於貓宅</h1>
           <div class="line"></div>
@@ -97,14 +104,14 @@
         </div>
         <img src="./assets/logo_circle 1.png" alt="" />
 
-        <div id="about_img01">
+        <div class="about_img01 area">
           <img src="./assets/about-catpeople.png" alt="" />
         </div>
-        <div id="about_img02">
+        <div class="about_img02 area">
           <img src="./assets/about-cat.png" alt="" />
         </div>
       </div>
-      <div class="catHouse">
+      <div class="catHouse area">
         <div class="right_title">
           <h1>貓宅環境</h1>
           <div class="line"></div>
@@ -114,12 +121,12 @@
           </p>
         </div>
         <div class="cathouse_img">
-          <img src="./assets/shop01.png" alt="" id="cathouse_img01" />
-          <img src="./assets/shop02.png" alt="" id="cathouse_img02" />
-          <img src="./assets/shop03.png" alt="" id="cathouse_img03" />
+          <img src="./assets/shop01.png" alt="" class="cathouse_img01 area" />
+          <img src="./assets/shop02.png" alt="" class="cathouse_img02 area" />
+          <img src="./assets/shop03.png" alt="" class="cathouse_img03 area" />
         </div>
       </div>
-      <div class="news">
+      <div class="news area">
         <div class="left_title">
           <h1>最新資訊</h1>
           <div class="line"></div>
@@ -146,7 +153,7 @@
           </button>
         </div>
       </div>
-      <div class="address">
+      <div class="address area">
         <div class="right_title">
           <h1>貓宅位置</h1>
           <div class="line"></div>
@@ -169,7 +176,7 @@
     </div>
 
     <footer>
-      <div class="contact">
+      <div class="contact area">
         <div class="contact-add">
           <h3>關於我們</h3>
           <p>
