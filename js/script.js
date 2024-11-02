@@ -165,7 +165,7 @@ $(function () {
         // 添加延遲顯示效果
         setTimeout(() => {
           setThis.addClass("visible");
-        }, index * 200); // 每張圖片延遲 200 毫秒
+        }, index * 100); // 每張圖片延遲 200 毫秒
       } else {
         // 滾動條離開區域後移除 visible 類別
         setThis.removeClass("visible");
@@ -198,3 +198,31 @@ $(function () {
 //     $(this).find(".title").css("opacity", "0");
 //   });
 // });
+
+// ===============news pre & next ==================
+$(function () {
+  let index = 0; // 當前顯示的索引
+  const newsItems = $(".carousel .newsItem"); // 所有的 newsItem
+  const itemCount = newsItems.length; // newsItem 的數量
+  const carousel = $(".carousel"); // 獲取 carousel 的元素
+  const itemWidth = $(".newsItem").outerWidth(); // 每個 newsItem 的寬度
+
+  // 初始位置
+  carousel.css("transform", "translateX(0)");
+
+  $(".next").click(function () {
+    // 更新索引，循環到下一個 newsItem
+    index = (index + 1) % itemCount;
+
+    // 使用 css 推動 carousel
+    carousel.css("transform", `translateX(${-itemWidth * index}px)`);
+  });
+
+  $(".pre").click(function () {
+    // 更新索引，循環到上一個 newsItem
+    index = (index - 1 + itemCount) % itemCount;
+
+    // 使用 css 推動 carousel
+    carousel.css("transform", `translateX(${-itemWidth * index}px)`);
+  });
+});

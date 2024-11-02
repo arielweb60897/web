@@ -2,6 +2,7 @@
 *{
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   font-family: "Noto Serif JP", serif;
@@ -107,6 +108,7 @@ header {
   /* max-width: 1440px; */
   width: 100%;
   height: 500px;
+  /* height: auto; */
   position: relative;
   /* animation: slider 5s 3; */
   /* overflow: hidden; */
@@ -218,7 +220,6 @@ header {
   header {
     /* height: 60px; */
     padding: 0 10px;
-    width: 100%;
     display: flex;
     justify-content: space-between; 
     align-items: center;
@@ -226,7 +227,8 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%; /* 確保 header 寬度佔滿整個視窗 */
+    max-width: 600px;
+    width: 100%;
     z-index: 1000; /* 設置較高的層級，避免被其他元素遮住 */
   }
   .logo-group, .hamberger, .icon-group {
