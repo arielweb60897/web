@@ -129,7 +129,16 @@ $(function () {
   $(".hamburger").click(function () {
     $(this).toggleClass("active");
     $(".nav-menu").toggleClass("active");
-    console.log("Hamburger clicked!");
+    // console.log("Hamburger clicked!");
+  });
+});
+// ------------------下拉選單----------------------
+
+$(function () {
+  $(".product_itemall").click(function () {
+    $(this).toggleClass("active");
+    $(".product_item").toggleClass("active");
+    // console.log("product_itemall clicked!");
   });
 });
 
@@ -224,5 +233,32 @@ $(function () {
 
     // 使用 css 推動 carousel
     carousel.css("transform", `translateX(${-itemWidth * index}px)`);
+  });
+});
+// ===============menu button ==================
+$(function () {
+  $("#coffee").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: $("#menuCoffee").offset().top,
+      },
+      500
+    );
+  });
+  $("#food").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: $("#menuFood").offset().top,
+      },
+      500
+    );
+  });
+  $("#cake").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: $("#menuCake").offset().top,
+      },
+      500
+    );
   });
 });

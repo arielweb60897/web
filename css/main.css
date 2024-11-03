@@ -507,8 +507,8 @@ hr {
 }
 .arrow {
   position: relative;
-  width: 30px;
-  height: 30px;
+  width: 50px;
+  height: 50px;
   background-color: #ccc;
   opacity: 0.5;
   border-radius: 50%;
@@ -697,8 +697,21 @@ hr {
   font-weight: lighter;
   margin-bottom: 10px;
 }
+.product_itemall {
+  /* background-color: #cc0; */
+  text-align: center;
+}
+.product_itemall i {
+  margin-left: 8px;
+  /* background-color: #f00; */
+  height: 12px;
+  padding: 2px;
+  display: none;
+}
 .product_item {
-  margin-top: 10px;
+  margin: 10px 0 0 0;
+  list-style: none;
+  padding: 0;
   /* background-color: #c0c; */
 }
 .product_item:hover {
@@ -713,18 +726,60 @@ hr {
 .product-listTop {
   /* background-color: #00f; */
   display: flex;
-  gap: 80%;
-  margin: 0 20px;
+  gap: 20%;
+  margin: 20px 10px;
+  align-items: center;
+  justify-content: space-between;
+  /* background-color: #f0f; */
+}
+.label {
+  display: inline-block;
+  /* background-color: #ff0; */
+}
+/* .product-listTop img {
+  margin-left: 10px;
+  } */
+.search-container {
+  /* background-color: #ff0; */
+  display: flex;
   align-items: center;
 }
-.product-listTop img {
-  margin-left: 10px;
+
+.search-input {
+  padding: 3px;
+  font-size: 12px;
+  color: #51453b76;
+  border: 1px solid #51453b;
+  border-radius: 4px 0 0 4px; /* 左邊圓角 */
+  outline: none; /* 去掉 focus 時的邊框 */
+  width: 150px;
 }
+
+.search-button {
+  padding: 0 2px;
+  width: 40px;
+  margin: 0;
+  font-size: 12px;
+  font-weight: lighter;
+  font-family: "Noto Serif JP", serif;
+  background-color: #51453b;
+  color: #f4e9e3;
+  border: 1px solid #51453b;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #f4e9e3;
+  color: #51453b;
+  /* border: 1px solid #f4e9e3; */
+}
+
 .product_all {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  gap: 16px; /* 控制項目間距 */
+  gap: 16px;
 }
 .product_list {
   margin-bottom: 10px;
@@ -753,6 +808,100 @@ hr {
   /* background-color: #f00; */
   font-size: 16px;
   font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+  .product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .left_aside {
+    padding-top: 10px;
+  }
+  .product_itemall {
+    /* background-color: #f00; */
+    width: 400px;
+  }
+  .search-container {
+    width: 400px;
+    justify-content: center;
+  }
+  .search-input {
+    width: 80%;
+  }
+  .search-button {
+    width: 20%;
+  }
+  .search-input,
+  .search-button {
+    font-size: 24px;
+  }
+  .product_itemall {
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #51453b;
+    color: #f4e9e3;
+    border-radius: 4px;
+    display: block;
+    height: 40px;
+    cursor: pointer;
+    /* position: absolute; */
+    z-index: 101;
+  }
+  .product_item {
+    font-weight: lighter;
+    font-size: 24px;
+    margin: 0;
+    border: 1px solid #51453b6b;
+    background-color: #f4e9e3;
+    color: #51453b;
+    opacity: 0;
+    position: relative;
+    /* position: absolute; */
+    transform: translateY(-10px);
+    transition: transform 0.3s ease;
+    z-index: 100;
+    display: none;
+  }
+  .product_item:hover {
+    background-color: #51453b;
+    color: #f4e9e3;
+    text-decoration: none;
+  }
+  .product_item.active {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+  }
+  .label {
+    display: none;
+  }
+  .product-listTop {
+    justify-content: center;
+  }
+  .product_itemall i {
+    display: inline-block;
+  }
+  .product-listTop {
+    margin-bottom: 100px;
+  }
+  .product_all {
+    justify-content: center;
+  }
+  .product_list {
+    width: 100%;
+    /* background-color: #008ffd; */
+    padding: 10px; /* 增加內部填充 */
+    text-align: center;
+    /* transform: scale(1.5); */
+  }
+  .product_list img {
+    width: 90%;
+  }
+  .Product-title,
+  .product_price {
+    font-size: 24px;
+  }
 }
 /* -------------------------貓宅故事------------------------- */
 .story_main {
