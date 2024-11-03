@@ -141,6 +141,21 @@ $(function () {
     // console.log("product_itemall clicked!");
   });
 });
+// ---------------------選單篩選 ----------------------
+$(function () {
+  $(".product_item").click(function () {
+    //split(' ')：將 class 字串以空格 (' ') 分割，變成一個陣列
+    //[1]：取陣列的第二個元素（索引為 1）
+    const category = $(this).attr("class").split(" ")[1];
+    // alert(category);
+
+    $(".product_list").hide();
+    $(`.product_list.${category}`).show();
+  });
+  $(".all").click(function () {
+    $(".product_list").show();
+  });
+});
 
 // -------------------慢慢浮現----------------------
 $(function () {
@@ -262,3 +277,53 @@ $(function () {
     );
   });
 });
+// =============== search ==================
+// $(function () {
+//   $(".search-input").on("input", function () {
+//     searchProduct();
+//   });
+// });
+// function searchProduct() {
+//   let productName = $(function () {
+//     let item = $(this).attr("productName").val();
+
+//     $(".product_list .Product-title").each(function () {
+//       let item = $(this).attr("data-item");
+//       if (item.indexOf(productName) != 1) {
+//         $(this).show();
+//       } else {
+//         $(this).hide();
+//       }
+//     });
+//   });
+// }
+
+$(function () {
+  // 在輸入時觸發搜尋
+  $(".search-input").on("input", function () {
+    searchProduct();
+  });
+});
+
+function searchProduct() {
+  // 獲取使用者輸入的搜尋文字
+  //trim() 刪除了字串開頭和結尾的空白
+  const searchText = $(".search-input").val().trim().toLowerCase();
+
+  // 遍歷每個產品的標題
+  $(".product_list").each(function () {
+    const itemTitle = $(this).find(".Product-title").data("item").toLowerCase();
+    // const itemTitle = $(this)
+    //   .find(".Product-title")
+    //   .attr("data-item")
+    //   .toLowerCase();
+    // console.log(itemTitle);
+
+    // 如果標題包含搜尋文字，顯示該產品；否則隱藏
+    if (itemTitle.includes(searchText)) {
+      $(this).show();
+    } else {
+      $(this).hide();
+    }
+  });
+}
