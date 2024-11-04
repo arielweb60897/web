@@ -1,9 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>貓宅故事</title>
-	<link rel="stylesheet" href="./css/header_other.css" />
+	<link rel="stylesheet" href="./css/header_index.css" />
 	<link rel="stylesheet" href="./css/footer_other.css" />
 	<link rel="stylesheet" href="./css/main.css" />
 	<link
@@ -31,43 +33,52 @@
 	<script src="./js/script.js"></script>
   </head>
   <body>
-	<div class="container">
-	  <header>
-		<div class="logo">
-		  <img src="./assets/logo_2_br 1.png" alt="" />
-		  <div class="logo_txt">
-			<span id="logo_txt1">Cat Cafe</span>
-			<span id="logo_txt2">Meow House</span>
-		  </div>
-		</div>
-		<nav>
-		  <div class="nav-menu">
-			<a href="about.html">關於貓宅</a>
-			<a href="news.html">最新消息</a>
-			<a href="menu.html">貓宅菜單</a>
-			<a href="story.html">貓宅故事</a>
-			<a href="product.html">貓宅小物</a>
-			<a href="contact.html">線上訂位</a>
-		  </div>
-		</nav>
-  
-		<div class="item">
-		  <button>
-			<img src="./assets/icon-cart.png" alt="" />
-			購物車
-		  </button>
-		  <button>
-			<img src="./assets/icon-account.png" alt="" />
-			會員登入
-		  </button>
-		</div>
-		<div class="lang">
-		  <button id="lang_button">CN</button>
-		  <button id="lang_button">JP</button>
-		</div>
-	  </header>
+		<header>
+			<a href="index.html" class="logo-group">
+				<img src="./assets/logo_2_br 1.png" alt="" />
+				<div class="logo_txt">
+				  <span class="logo_txt1">Cat Cafe</span>
+				  <span class="logo_txt2">Meow House</span>
+				</div>
+			  </a>
+			  <nav>
+				<div class="hamburger">
+				  <div class="nav-line"></div>
+				  <div class="nav-line"></div>
+				  <div class="nav-line"></div>
+				</div>
+				<div class="nav-menu">
+				  <a href="index.html">首頁</a>
+				  <a href="about.html">關於貓宅</a>
+				  <a href="news.html">最新消息</a>
+				  <a href="menu.html">貓宅菜單</a>
+				  <a href="story.html">貓宅故事</a>
+				  <a href="product.html">貓宅小物</a>
+				  <a href="contact.html">線上訂位</a>
+				</div>
+			  </nav>
+	  
+			<div class="icon-group">
+			  <div class="item">
+				<button>
+				  <i class="fa-solid fa-cart-shopping icon-color"></i>
+				  <!-- <img src="./assets/icon-cart.png" alt=""> -->
+				  <span>購物車</span>
+				</button>
+				<button>
+				  <i class="fa-solid fa-user icon-color"></i>
+				  <!-- <img src="./assets/icon-account.png" alt=""> -->
+				  <span> 會員登入</span>
+				</button>
+			  </div>
+			  <div class="lang">
+				<button id="lang_button">CN</button>
+				<button id="lang_button">JP</button>
+			  </div>
+			</div>
+		  </header>
 	  <!-- 封面照片 -->
-	  <div class="cover">
+	  <div class="cover area">
 		<!-- <div class="pre">
 			<img src="./assets/icon-pre.png" alt="" />
 		  </div>
@@ -88,7 +99,6 @@
           <!-- <img src="./assets/contact-cover06.png" alt="" /> -->
 		</div>
 	  </div>
-	</div>
 
 <main>
 	<div class="main_title">
@@ -97,11 +107,11 @@
 		<div class="title_line"></div>
 	</div>
 	<div class="storyButton">
-		<button class="story_button">
+		<button class="story_button" id="storyAll">
 			<img src="./assets/icon-cat.png" alt="">
 			<div class="button_txt">Story </div>
 		</button>
-		<button class="story_button">
+		<button class="story_button" id="remind">
 			<img src="./assets/icon-remind.png" alt="">
 			<div class="button_txt">Notice</div>
 		</button>
@@ -111,64 +121,64 @@
 			<h1>貓咪成員</h1>
 			<div class="line"></div>
 		</div>
-		<div class="story_all">
-			<div class="story_list">
+		<div class="story_all area">
+			<div class="story_list area">
 				<img src="./assets/bengal-cat.png" alt="">
 				<div class="story-txt">
 					<div class="story-title">小虎<div class="Male">男</div></div>
 					<div class="story-cat">店內的「小探險家」，小虎是一隻活潑的虎斑貓，對一切充滿好奇心。喜歡四處探索，也經常會逗弄客人的鞋帶。 </div>
 				</div>
 			</div>
-			<div class="story_list">
+			<div class="story_list area">
 				<img src="./assets/3ColorCat.png" alt="" >
 				<div class="story-txt">
 					<div class="story-title">咪醬<div class="female">女 </div></div>
 					<div class="story-cat">一隻溫柔的三色母貓，咪醬喜歡窩在陽光下小憩，是店內的「陽光天使」。她對人特別友善，經常會靜靜地坐在客人旁邊打盹。 </div>
 				</div>
 			</div>
-			<div class="story_list">
+			<div class="story_list area">
 				<img src="./assets/OrangeCat.png" alt="" >
 				<div class="story-txt">
 					<div class="story-title">橘子<div class="Male">男</div></div>
 					<div class="story-cat">一隻沉穩的橘色公貓，橘子擁有一雙深邃的眼睛，總是給人一種神秘的感覺。他喜歡安靜地觀察周圍，偶爾會跳到高處俯瞰全場 </div>
 				</div>
 			</div>
-			<div class="story_list">
+			<div class="story_list area">
 				<img src="./assets/milk-cat.png" alt=""    >
 				<div class="story-txt">
 					<div class="story-title">奶茶<div class="female">女</div></div>
 					<div class="story-cat">奶茶是一隻甜美的奶油色母貓，性格溫順，喜歡被撫摸。她最喜歡在舒適的椅子上捲成一團，偶爾會撒嬌地蹭蹭客人的腿。</div>
 				</div>
 			</div>
-			<div class="story_list">
+			<div class="story_list area">
 				<img src="./assets/white-cat.png" alt=""    >
 				<div class="story-txt">
 					<div class="story-title">小米<div class="Male">男</div></div>
 					<div class="story-cat">小米是一隻機靈的白色公貓，喜歡到處蹦跳。她對每個新來的客人都充滿好奇，經常會主動來打招呼，是店裡的「小小迎賓員」 </div>
 				</div>
 			</div>
-			<div class="story_list">
+			<div class="story_list area">
 				<img src="./assets/fat-cat.png " alt=""    >
 				<div class="story-txt">
 					<div class="story-title">阿胖<div class="Male">男</div></div>
 					<div class="story-cat">阿胖是一隻圓滾滾的灰白色公貓，體型大但性格非常溫柔。他最愛的活動是躺在地板上享受客人輕輕的撫摸，是店內的「療癒大使」。</div>
 				</div>
 			</div>
-			<div class="story_list">
+			<div class="story_list area">
 				<img src="./assets/black-white-cat.png " alt=""    >
 				<div class="story-txt">
 					<div class="story-title">賓果<div class="Male">男</div></div>
 					<div class="story-cat">賓果是一隻典雅的賓士貓，性格活潑又好奇，常常在店內四處巡視，像是自己的小王國。牠喜歡和客人互動，偶爾會用頭輕輕蹭人。 </div>
 				</div>
 			</div>
-			<div class="story_list">
+			<div class="story_list area">
 				<img src="./assets/cream-color-cat.png" alt=""    >
 				<div class="story-txt">
 					<div class="story-title">奶油球<div class="female">女 </div></div>
 					<div class="story-cat">一隻柔軟的奶黃色母貓，喜歡在貓爬架上享受高處的風景，是店內的小小「觀景者」。奶油球性格溫和，總是輕聲呼嚕迎接客人。</div>
 				</div>
 			</div>
-			<div class="story_list">
+			<div class="story_list area">
 				<img src="./assets/grey-cat.png" alt=""    >
 				<div class="story-txt">
 					<div class="story-title">銀寶<div class="Male">男</div></div>
@@ -179,7 +189,7 @@
 			</div>
 			
 	
-		<div class="right_title">
+		<div class="right_title area">
 			<h1>小叮嚀</h1>
 			<div class="line"></div>
 		</div>
@@ -250,3 +260,4 @@
 		</div>
 	  </footer>
 	</body>
+</html>

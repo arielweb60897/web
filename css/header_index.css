@@ -26,6 +26,8 @@ header {
   display: flex;
   align-items: center; /* 將圖片和文字垂直方向上置中 */
   /* gap: 10px; 控制圖片和文字之間的間距 */
+  text-decoration: none; 
+  color: inherit;
 }
 .icon-group{
   display: flex;
@@ -34,7 +36,7 @@ header {
 }
 .logo_txt {
   display: flex;
-  flex-direction: column; /* 讓文字垂直排列 */
+  flex-direction: column; 
   margin-left: 5px;
 }
 .logo_txt1,.sns_txt1 {

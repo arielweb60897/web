@@ -181,12 +181,27 @@ $(function () {
   //   });
   function handleScroll() {
     $(".area").each(function (index) {
+      // console.log(index);
+
       const setThis = $(this);
       const areaTop = setThis.offset().top;
+      // console.log(areaTop);
+      // console.log(areaTop);
 
       // 計算滾動條位置是否已經達到顯示條件
-      if ($(window).scrollTop() >= areaTop + showHeight - $(window).height()) {
+      // console.log(
+      //   `$(window).scrollTop():${$(window).scrollTop()}`,
+      //   `window.innerHeight:${window.innerHeight}`,
+      //   `areaTop:${areaTop}`,
+      //   areaTop + showHeight - window.innerHeight,
+      //   index,
+      //   $(window).scrollTop() >= areaTop + showHeight - window.innerHeight
+      // );
+
+      if ($(window).scrollTop() >= areaTop + showHeight - window.innerHeight) {
         // 添加延遲顯示效果
+        console.log("yes");
+
         setTimeout(() => {
           setThis.addClass("visible");
         }, index * 100); // 每張圖片延遲 200 毫秒
@@ -250,7 +265,7 @@ $(function () {
     carousel.css("transform", `translateX(${-itemWidth * index}px)`);
   });
 });
-// ===============menu button ==================
+// ===============跳轉 button ==================
 $(function () {
   $("#coffee").click(function () {
     $("html, body").animate(
@@ -277,6 +292,25 @@ $(function () {
     );
   });
 });
+$(function () {
+  $("#storyAll").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: $(".story_all").offset().top,
+      },
+      500
+    );
+  });
+  $("#remind").click(function () {
+    $("html, body").animate(
+      {
+        scrollTop: $(".remind").offset().top,
+      },
+      500
+    );
+  });
+});
+
 // =============== search ==================
 // $(function () {
 //   $(".search-input").on("input", function () {
