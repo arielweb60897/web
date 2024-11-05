@@ -474,6 +474,23 @@ button {
   display: inline-block;
   margin: 20px 0;
 }
+.main_top {
+  /* background-color: #ccc; */
+  margin: 0 5%;
+  opacity: 0.9;
+}
+.main_top a {
+  /* font-size: 14px; */
+  color: #756659;
+  text-decoration: none;
+  padding: 5px;
+}
+.main_top a:hover {
+  text-decoration: underline;
+}
+.main_top a:last-child {
+  font-weight: bold;
+}
 .title_line {
   width: 500px;
   padding: 0 10px;
@@ -1061,13 +1078,8 @@ hr {
 }
 /* -----------------------線上預約---------------------- */
 .form {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  /* background-color: #ff0; */
   max-width: 1000px;
-  margin: 0 auto 100px auto;
+  margin: 100px auto;
 }
 .form_item {
   width: 100%;
@@ -1086,6 +1098,23 @@ hr {
   text-align: center;
   margin-right: 20px;
 }
+.submit {
+  background-color: #51453b;
+  color: #f4e9e3;
+  padding: 10px;
+  border-radius: 10px;
+  border: 0;
+  width: 50vw;
+  display: block;
+  margin: 20vh auto 0 auto;
+  cursor: pointer;
+}
+.submit:hover {
+  /* transform: scale(1.1); */
+  background-color: #f4e9e3;
+  color: #51453b;
+  border: 1px solid #51453b;
+}
 .form_item input,
 .form_item select {
   /* border-right: 1px solid #51453b; */
@@ -1095,21 +1124,46 @@ hr {
   border: 1px solid #51453b;
   border-radius: 5px;
   font-size: 16px;
-  color: #51453b73;
+  color: #51453b;
   font-family: "Noto Serif", serif;
   font-weight: lighter;
+  opacity: 0.9;
 }
 input[type="date"] {
-  color: #51453b73;
+  color: #51453b;
   letter-spacing: 5px; /* 調整字間距 */
 }
 .form_item label {
+  opacity: 1;
+  width: 100%;
   display: block; /* 確保 label 占滿一行 */
   margin-bottom: 0;
+  /* position: absolute; */
 }
-.form_item:last-child input {
-  height: 50vh; /* 使用 vh 來設置高度 */
-  padding: 10px; /* 確保內邊距保持一致 */
+/* 隱藏日曆圖示 */
+/* input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none; 
+} */
+/* 隱藏預設箭頭 */
+/* .form_item select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+} */
+#down {
+  /* position: relative; */
+  right: 20px;
+  top: 10px;
+  font-size: 18px;
+  color: #51453b;
+  /* 防止圖示影響點擊事件 */
+  pointer-events: none;
+  background-color: #ccc;
+}
+.memo input {
+  height: 50vh;
+  padding: 10px;
 }
 .time-notice {
   text-align: right;
@@ -1118,4 +1172,50 @@ input[type="date"] {
 }
 .form-notice {
   font-size: 1.3vw;
+}
+@media only screen and (max-width: 768px) {
+  .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .form_item {
+    margin: 10px 0 0 0;
+  }
+  .form_item span,
+  .submit {
+    width: 80%;
+    margin: 20px 0 20px 0;
+    /* margin-right: 0; */
+    display: inline-block;
+  }
+  /* .form_item:first-of-type(1) > span {
+    margin-top: 0;
+  } */
+  .date {
+    margin-top: 10px;
+  }
+  .form_item input,
+  .form_item select {
+    display: inline-block;
+  }
+  .form-notice,
+  .time-notice {
+    font-size: 12px;
+    width: 80%;
+    /* margin: 0 10%; */
+    /* background-color: #ccc; */
+  }
+  .form_item {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #ccc; */
+  }
+  .memo {
+    margin-bottom: 40px;
+  }
 }

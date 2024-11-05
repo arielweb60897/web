@@ -120,6 +120,33 @@ header {
   width: 100%;
   height: 100%;
 }
+.newsImage{
+  background-size: cover;
+  background-position: center; 
+  width: 100%;
+  height: 500px;
+  background-image: url(../assets/news-cover02.png);
+}
+/* 文字樣式 */
+.overlay-text {
+  font-family: "Noto Serif JP", serif;
+  position: absolute; /* 使用絕對定位 */
+  top: 50%; /* 從上方距離 */
+  right: 10%; /* 從左邊距離 */
+  color: #ffffff; /* 字體顏色 */
+  font-size: 3em; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); 
+}
+
+.overlay-description {
+  font-family: "Noto Serif JP", serif;
+  position: absolute;
+  bottom: 30%; /* 可以根據需要調整 */
+  right: 15%; /* 從左邊距離 */
+  color: #ffffff; /* 字體顏色 */
+  font-size: 1.5em; /* 字體大小 */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* 文字陰影效果 */
+}
 /* @keyframes slider {
   0%{left:     0px;}
  20%{left:  -1440px;}
@@ -363,8 +390,26 @@ header {
   .hamburger.active .nav-line:nth-child(3){
     transform: rotate(-45deg);
   }
+  .newsImage {
+    height: 300px; /* 更小的螢幕上縮短高度 */
+}
+.overlay-text {
+
+  top: 50%; 
+  right: 10%;
+  /* font-size: 1em;  */
+ 
+}
+
+.overlay-description {
+
+  bottom: 15%; 
+  right: 20%; 
+  /* font-size: 0.3em;  */
 
 }
+}
+
 
 /* .main_menu {
     width: 100%;
