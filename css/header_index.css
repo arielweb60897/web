@@ -32,23 +32,26 @@ header {
 .icon-group{
   display: flex;
   /* background-color: #ccc; */
-  gap: 30px;
+  gap: 1vw;
 }
 .logo_txt {
   display: flex;
   flex-direction: column; 
   margin-left: 5px;
 }
+/* .logo-group img{
+  width: 6vw;
+} */
 .logo_txt1,.sns_txt1 {
   font-weight: lighter;
-  font-size: 12px;
+  font-size: 1em;
 }
 .logo_txt2,.sns_txt2 {
   font-weight: bold;
 }
 .nav-menu {
   display: flex;
-  gap: 20px; /* 適當加大選單之間的間距 */
+  gap: 1vw; /* 適當加大選單之間的間距 */
   align-items: center; /* 將選單項目在垂直方向上置中 */
 }
 .nav-menu a {
@@ -187,13 +190,13 @@ header {
   right: 30px;
 }
 .item button {
-  margin-right: 10px;
+  margin-right: 5%;
   width: 100px;
   color: #f4e9e3;
   background-color: #756659;
   border: 0;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
   font-family: "Noto Serif JP", serif;
   padding: 3px 5px;
@@ -212,40 +215,54 @@ header {
   background-color: #756659;
   border: 0;
   border-radius: 50%;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: bold;
   font-family: "Noto Serif JP", serif;
   padding: 2px;
   margin: 0;
 }
-@media (max-width: 1000px) and (min-width: 601px)  {
-  .nav-menu {
+@media (max-width: 1000px) and (min-width: 769px)  {
+  /* .nav-menu {
     gap: 10px; 
-  }
+  } */
 
   .nav-menu a {
-    font-size: 14px; 
+    font-size: 0.9em; 
   }
 
   .item button {
-    margin-right: 10px;
-    width: auto;
-    color: #f4e9e3;
-    background-color: #756659;
-    border: 0;
-    border-radius: 5px;
-    font-size: 14px;
-    padding: 3px 5px;
-    margin: 0;
+    /* margin-right: 10px; */
+    /* width: auto; */
+    /* color: #f4e9e3; */
+    /* background-color: #756659; */
+    /* border: 0; */
+    /* border-radius: 5px; */
+    /* font-size: 14px; */
+    /* padding: 3px 5px; */
+    /* margin: 0; */
+    background: none; 
+  border: none;
+  padding: 0; 
+  cursor: pointer; 
+  width: auto;
+  margin-right: 3px;
+  font-size: 1.5em;
+  color: #756659;
   }
-  .lang > #lang_button{
+  .logo_txt1,.logo_txt2 {
+    font-size: 0.2em;
+  }
+  /* .lang > #lang_button{
     font-size: 12px;
     width: 25px;
     height: 25px;
+  } */
+  .item span{
+    display: none;
   }
 }
-/* 手機螢幕（max-width: 600px） */
-@media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 768px) {
   header {
     /* height: 60px; */
     padding: 0 10px;
@@ -256,12 +273,13 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    max-width: 600px;
+    /* max-width: ; */
     width: 100%;
     z-index: 1000; /* 設置較高的層級，避免被其他元素遮住 */
   }
   .logo-group, .hamberger, .icon-group {
-    flex: 1; /* 讓這三個區塊平分空間 */
+     /* 讓這三個區塊平分空間 */
+    /* flex: 1; */
     display: flex;
     justify-content: center; /* 置中對齊內容 */
   }

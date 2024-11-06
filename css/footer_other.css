@@ -70,17 +70,19 @@
 }
 
 footer {
-  /* height: 270px; */
+  width: 100vw;
+  height: 270px;
   color: #f4e9e3;
   background-color: #756659;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding: 0 20px;
 }
 footer #tibame {
   color: #f4e9e3;
   max-width: 1000px;
-  margin: 0 20px 10px;
+  margin: 0 20px 20px;
   /* margin: 0; */
   /* margin-top: auto;  */
   /* 讓 p 自動推到 footer 底部 */

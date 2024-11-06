@@ -248,11 +248,14 @@ header {
 }
 
 footer {
+  width: 100vw;
+  margin: 0;
   height: 270px;
   background-color: #756659;
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding: 20px;
 }
 footer p {
   color: #f4e9e3;
@@ -262,7 +265,7 @@ footer p {
   margin-bottom: 20px;
   text-align: center;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .contact {
     display: flex;
     flex-direction: column;
