@@ -282,6 +282,7 @@ header {
     /* flex: 1; */
     display: flex;
     justify-content: center; /* 置中對齊內容 */
+    align-content: center;
   }
   .icon-group {
     /* background-color: #0f0; */
