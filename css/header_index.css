@@ -292,6 +292,7 @@ header {
     /* background-color: #0ff; */
     display: flex;
     justify-content: flex-start;
+    background-color: #ccc;
   }
   /* .item{
     background-color: #ccc;
