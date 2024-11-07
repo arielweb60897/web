@@ -284,8 +284,11 @@ display: none;
      /* 讓這三個區塊平分空間 */
     /* flex: 1; */
     display: flex;
-    justify-content: center;
-    align-content: center;
+    justify-content: center; /* 置中對齊內容 */
+  }
+  .icon-group {
+    /* background-color: #0f0; */
+    gap: 0;
   }
   .logo-group {
     /* background-color: #0ff; */
