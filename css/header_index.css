@@ -10,16 +10,23 @@ body {
   color: #756659;
 }
 header {
-  height: 75px;
+  height: 70px;
   background-color: #f4e9e3;
+  width: 100%; /* 確保 header 寬度佔滿整個視窗 */
+  display: flex;
+  justify-content: center;
+}
+.headerAll{
+  /* background-color: #ccc; */
+  /* margin: 0 auto; */
+  max-width: 1200vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* 增加內邊距 */
+  padding: 10px 0;
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%; /* 確保 header 寬度佔滿整個視窗 */
+  gap: 20px;
   z-index: 1000; /* 設置較高的層級，避免被其他元素遮住 */
 }
 .logo-group {
@@ -71,9 +78,9 @@ header {
 }
 .cover {
   position: relative;
-  width: 100%;
-  /* max-width: 1200px; */
-  height: 500px;
+  /* width: 100%; */
+  max-width: 1200px;
+  /* height: 500px; */
   margin: 0 auto;
   /* background-color: #ff0; */
   overflow: hidden;
@@ -110,18 +117,18 @@ header {
 .img6 {
   display: flex;
   /* transition: transform 0.5s ease-in-out; */
-  /* max-width: 1440px; */
-  width: 100%;
-  height: 500px;
+  max-width: 1440vw;
+  /* height: 500px; */
   /* height: auto; */
   position: relative;
+  margin: auto;
   /* animation: slider 5s 3; */
   /* overflow: hidden; */
   left: 0;
 }
 .img6 img {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 .newsImage{
   background-size: cover;
@@ -221,6 +228,9 @@ header {
   padding: 2px;
   margin: 0;
 }
+.hamburgerAll{
+display: none;
+}
 @media (max-width: 1000px) and (min-width: 769px)  {
   /* .nav-menu {
     gap: 10px; 
@@ -263,29 +273,19 @@ header {
 }
 
 @media only screen and (max-width: 768px) {
-  header {
-    /* height: 60px; */
-    padding: 0 10px;
-    display: flex;
-    justify-content: space-between; 
-    align-items: center;
-    position: relative; 
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* max-width: ; */
-    width: 100%;
-    z-index: 1000; /* 設置較高的層級，避免被其他元素遮住 */
+ .headerAll{
+  width: 100vw;
+  padding: 10px 20px;
+ }
+  nav{
+    display: none;
   }
   .logo-group, .hamberger, .icon-group {
      /* 讓這三個區塊平分空間 */
     /* flex: 1; */
     display: flex;
-    justify-content: center; /* 置中對齊內容 */
-  }
-  .icon-group {
-    /* background-color: #0f0; */
-    gap: 0;
+    justify-content: center;
+    align-content: center;
   }
   .logo-group {
     /* background-color: #0ff; */
@@ -318,13 +318,14 @@ header {
   }
   .cover {
     height: auto;
+    max-width: 1200px;
   }
   .img6 img {
     width: 100%;
     height: auto;
   }
 
-  .nav-menu {
+  .nav-menu-hamburger {
     /* gap: 15px; */
     padding: 0;
     /* display: none; */
@@ -337,23 +338,25 @@ header {
     background-color: #f4e9e3;
     z-index: 100;
     font-size: 24px;
-    opacity: 0;
+    /* opacity: 0; */
     /* 初始隱藏 */
-    transform: translateY(-100%); 
+    /* transform: translateY(-100%);  */
     transition: transform 0.3s ease;
     /* 禁止指標事件 */
     pointer-events: none; 
   
     }
   /* 顯示 nav-menu */
-  .nav-menu.active {
+  .nav-menu-hamburger .active {
     opacity: 1;
-    transform: translateY(0); /* 向下滑入 */
-    pointer-events: auto; /* 允許指標事件 */
+    /* 向下滑入 */
+    transform: translateY(0); 
+    /* 允許指標事件 */
+    pointer-events: auto; 
   }
 
   /* 設定每個選單項目 */
-  .nav-menu a {
+  .nav-menu-hamburger a {
     font-size: 1.5rem;
     text-decoration: none;
     font-family: "Noto Serif JP", serif;
@@ -367,7 +370,7 @@ header {
     padding: 5px 0; /* 設置內部間距 */
   
   }
-  .nav-menu a:hover {
+  .nav-menu-hamburger a:hover {
   font-size: 1.5rem;
   background-color: #756659;
   color: #f4e9e3;
@@ -375,23 +378,25 @@ header {
   text-decoration: none;
   }
 
-  .lang > #lang_button{
-    font-size: 16px;
-    width: 40px;
-    height: 40px;
+  .lang {
+  display: none;
   }
-  nav .hamburger {
+  .hamburgerAll .hamburger {
     /* background-color: #f00; */
     width: 100%; 
-    height: 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     cursor: pointer;
     gap: 5px;
+    /* background-color: #ccf; */
   }
-  
-  nav .hamburger .nav-line {
+  .hamburgerAll{
+    display: block;
+    display: flex;
+    /* background-color: #ccc; */
+  }
+  .hamburgerAll .hamburger .nav-line {
     /* cursor: pointer; */
     width: 30px;
     height: 3px;
@@ -399,13 +404,13 @@ header {
     transform-origin:  12% 50%;
     transition: all .3s ease;
   }
-  .hamburger.active .nav-line:nth-child(1){
+  .hamburgerAll .active .nav-line:nth-child(1){
     transform: rotate(45deg);
   }
-  .hamburger.active .nav-line:nth-child(2){
+  .hamburgerAll .active .nav-line:nth-child(2){
     opacity: 0;
   }
-  .hamburger.active .nav-line:nth-child(3){
+  .hamburgerAll .active .nav-line:nth-child(3){
     transform: rotate(-45deg);
   }
   .newsImage {

@@ -112,7 +112,7 @@ $(function () {
     $(".img6").width(divWidth * imgCount); // 更新 ul 的總寬度
 
     // 調整圖片位置以符合新的寬度
-    $(".img6").css({
+    $(".img6 img").css({
       left: divWidth * index * -1,
     });
   });
