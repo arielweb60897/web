@@ -287,7 +287,7 @@ header {
   .icon-group {
     /* background-color: #0f0; */
     gap: 0;
-    background-color: #ccc;
+    /* background-color: #ccc; */
   }
   .logo-group {
     /* background-color: #0ff; */
