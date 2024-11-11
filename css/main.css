@@ -136,9 +136,11 @@
 /* about */
 
 /* --------------關於貓宅------------- */
-/* .container {
-  gap: 100px;
-} */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* background-color: #ccc; */
+}
 .left_title {
   margin: 0 0 37px 20px;
   display: block;
@@ -284,7 +286,7 @@
     height: 300px;
     /* width: 100%; */
     /* height: 100%; */
-    object-fit: cover; /* 保持比例並填滿容器 */
+    object-fit: cover;
   }
 }
 /* ----------------關於 最新消息------------------ */
@@ -387,7 +389,6 @@ button {
 @media only screen and (max-width: 768px) {
   .news_item {
     width: 100%;
-    /* height: 385px;  */
     position: relative;
     overflow: hidden;
   }
@@ -402,8 +403,8 @@ button {
   .news02,
   .news03 {
     width: 100%;
-    height: 100%;
-    flex: 0 0 auto;
+    /* height: 100%; */
+    /* flex: 0 0 auto; */
   }
   /* .news01 span,
   .news02 span,
@@ -497,6 +498,11 @@ button {
   border-top: 2px solid #756659;
   box-sizing: border-box;
 }
+.news_main {
+  margin: auto;
+  max-width: 1200px;
+  /* background-color: #ccc; */
+}
 .news_main01,
 .news_main02,
 .news_main03 {
@@ -525,26 +531,30 @@ hr {
   max-width: 1200px;
   text-align: center;
   display: flex;
-  justify-content: center; /* 讓按鈕水平居中 */
-  align-items: center; /* 讓按鈕垂直居中 */
-  gap: 15px; /* 控制每個按鈕之間的間距 */
-  margin: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 50px auto;
 }
-#pageButton {
+.pageButton {
   display: inline-block;
   width: 40px;
   height: 40px;
   color: #756659;
   font-family: "Noto Serif JP", serif;
-  border: 1px solid #756659; /* 按鈕的邊框顏色 */
-  border-radius: 50%; /* 使按鈕變成圓形 */
-  text-align: center; /* 文字水平居中 */
-  line-height: 20px; /* 讓文字垂直居中，與按鈕高度相等 */
-  font-size: 16px; /* 字體大小 */
-  font-weight: lighter; /* 字體加粗 */
-  padding: 0; /* 移除 padding 確保按鈕大小不被擴展 */
-  cursor: pointer; /* 滑鼠懸停時顯示指針 */
+  border: 1px solid #756659;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  font-size: 16px;
+  font-weight: lighter;
+  padding: 0;
+  cursor: pointer;
   background-color: #fff;
+}
+.pageButton:first-child {
+  background-color: #756659;
+  color: #fff;
 }
 .arrow {
   position: relative;
@@ -610,6 +620,9 @@ hr {
   padding: 10px 39px;
   cursor: pointer;
   margin: 0 10px;
+}
+.menu_button:hover {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 .shop_menu {
   max-width: 1200px;
@@ -823,8 +836,8 @@ hr {
 .product_all {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-around; */
-  justify-content: flex-start;
+  justify-content: space-around;
+  /* justify-content: flex-start; */
   gap: 16px;
 }
 .product_list {
@@ -981,13 +994,17 @@ hr {
   font-weight: bold;
 }
 .storyButton {
+  max-width: 1200px;
   /* gap: 50px; */
   /* background-color: #ccc; */
   display: flex;
   /* justify-content: center; */
   justify-content: space-around;
   align-items: center;
-  margin: 20px 0 100px 0;
+  margin: 0 auto 50px auto;
+}
+.story_button:hover {
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 .story_button {
   width: 450px;
@@ -1079,7 +1096,7 @@ hr {
 /* -----------------------線上預約---------------------- */
 .form {
   max-width: 1000px;
-  margin: 100px auto;
+  margin: 60px auto;
 }
 .form_item {
   width: 100%;
@@ -1104,9 +1121,9 @@ hr {
   padding: 10px;
   border-radius: 10px;
   border: 0;
-  width: 50vw;
+  width: 10vw;
   display: block;
-  margin: 20vh auto 0 auto;
+  margin: 100px auto 0 auto;
   cursor: pointer;
 }
 .submit:hover {
@@ -1162,16 +1179,16 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   background-color: #ccc;
 }
 .memo input {
-  height: 50vh;
+  height: 30vh;
   padding: 10px;
 }
 .time-notice {
   text-align: right;
   padding: 0px;
-  font-size: 1.3vw;
+  font-size: 12px;
 }
 .form-notice {
-  font-size: 1.3vw;
+  font-size: 12px;
 }
 @media only screen and (max-width: 768px) {
   .form {

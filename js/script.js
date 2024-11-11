@@ -1,3 +1,21 @@
+// --------------header 固定------------------
+
+$(window).on("scroll", function () {
+  const header = $("header");
+  // cover 區域的整體高度
+  // const coverHight = $(".cover").outerHeight();
+  // console.log(coverHight);
+
+  if ($(window).scrollTop() > 0) {
+    header.css({
+      position: "fixed",
+      top: 0,
+    });
+  } else {
+    header.css("position", "relative");
+  }
+});
+
 // --------------slider------------------
 $(function () {
   //  .cover 的寬度
@@ -76,6 +94,8 @@ $(function () {
       //回到第一頁
       index = 0;
     }
+    // console.log(imgCount);
+
     //?
     $(".img6").animate({
       left: divWidth * index * -1,
@@ -128,7 +148,7 @@ $(function () {
 $(function () {
   $(".hamburger").click(function () {
     $(this).toggleClass("active");
-    $(".nav-menu").toggleClass("active");
+    $(".nav-menu-hamburger").toggleClass("active");
     // console.log("Hamburger clicked!");
   });
 });
@@ -241,28 +261,58 @@ $(function () {
 // ===============news pre & next ==================
 $(function () {
   let index = 0; // 當前顯示的索引
-  const newsItems = $(".carousel .newsItem"); // 所有的 newsItem
-  const itemCount = newsItems.length; // newsItem 的數量
-  const carousel = $(".carousel"); // 獲取 carousel 的元素
-  const itemWidth = $(".newsItem").outerWidth(); // 每個 newsItem 的寬度
-
+  const newsItems = $(".carousel").width(); // 所有的 newsItem
+  const itemCount = $(".newsItem").length; // newsItem 的數量
+  // alert(newsItems);
+  // alert(itemCount);
   // 初始位置
-  carousel.css("transform", "translateX(0)");
+  // carousel.css("transform", "translateX(0)");
+  $(`.newsItem img`).width(newsItems);
+  $(`.carousel`).width(newsItems * itemCount);
 
   $(".next").click(function () {
-    // 更新索引，循環到下一個 newsItem
-    index = (index + 1) % itemCount;
+    $(`.newsItem`).animate({
+      left: newsItems * index * -1,
+    });
+    if (index < itemCount - 1) {
+      index++;
+    } else {
+      //回到第一頁
+      index = 0;
+    }
+    // // 更新索引，循環到下一個 newsItem
+    // index = (index + 1) % itemCount;
 
-    // 使用 css 推動 carousel
-    carousel.css("transform", `translateX(${-itemWidth * index}px)`);
+    // // 使用 css 推動 carousel
+    // carousel.css("transform", `translateX(${-itemWidth * index}px)`);
   });
 
   $(".pre").click(function () {
-    // 更新索引，循環到上一個 newsItem
-    index = (index - 1 + itemCount) % itemCount;
+    $(`.newsItem`).animate({
+      left: newsItems * index * -1,
+    });
+    if (index > 0) {
+      index--; // 向左移動
+    } else {
+      index = imgCount - 1; // 回到最後一頁
+    }
+    // // 更新索引，循環到上一個 newsItem
+    // index = (index - 1 + itemCount) % itemCount;
 
-    // 使用 css 推動 carousel
-    carousel.css("transform", `translateX(${-itemWidth * index}px)`);
+    // // 使用 css 推動 carousel
+    // carousel.css("transform", `translateX(${-itemWidth * index}px)`);
+  });
+
+  $(window).resize(function () {
+    itemWidth = $(".news_item").width(); // 更新 div 的寬度
+
+    $(`.newsItem img`).width(newsItems);
+    $(`.carousel`).width(newsItems * itemCount);
+
+    // 調整圖片位置以符合新的寬度
+    $(".newsItem img").css({
+      left: divWidth * index * -1,
+    });
   });
 });
 // ===============跳轉 button ==================
