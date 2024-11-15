@@ -385,7 +385,7 @@ button {
   }
   .news_item {
     margin: 0 auto;
-    width: 90%;
+    width: 80%;
     position: relative;
     overflow: hidden;
     /* padding: 10%; */
@@ -397,48 +397,25 @@ button {
     width: 100%;
     margin: 0 auto;
     position: relative;
-    background-color: #ccc;
+    /* background-color: #ccc; */
   }
 
   .news01,
   .news02,
   .news03 {
     width: 100%;
-    /* height: 100%; */
+    margin: 0;
     flex: 0 0 100%;
     overflow: hidden;
   }
-  /* .news01 span,
-  .news02 span,
-  .news03 span {
-    opacity: 1;
-    bottom: 0;
-    margin: 0;
-    padding: 0;
-    transform: translateY(0);
-  } */
-  /* .news01:hover span,
-  .news02:hover span,
-  .news03:hover span {
-    opacity: 0;
-    transform: translateY(0);
-  } */
+
   .news01 img,
   .news02 img,
   .news03 img {
     width: 100%;
     height: auto;
   }
-  /* .arrowAll {
-    background-color: #ccc;
-    width: 100%;
-    display: flex;
-  } */
-  .arrow_news {
-    background-color: #ccc;
-    width: 100%;
-    /* justify-content: space-between; */
-  }
+
   .pre_news,
   .next_news {
     position: absolute;
@@ -446,18 +423,18 @@ button {
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 1;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     opacity: 1;
   }
 
   .pre_news {
-    left: 10px; /* 根據需求調整箭頭位置 */
+    left: 20px;
   }
 
   .next_news {
-    right: 10px; /* 根據需求調整箭頭位置 */
+    right: 20px;
   }
 
   /* 增加圓形背景 */

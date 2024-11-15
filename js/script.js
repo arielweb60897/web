@@ -270,7 +270,7 @@ $(function () {
 //   $(`.newsItem img`).width(newsItems);
 //   $(`.carousel`).width(newsItems * itemCount);
 
-//   $(".next").click(function () {
+//   $(".next_news").click(function () {
 //     $(`.newsItem`).animate({
 //       left: newsItems * index * -1,
 //     });
@@ -287,7 +287,7 @@ $(function () {
 //     // carousel.css("transform", `translateX(${-itemWidth * index}px)`);
 //   });
 
-//   $(".pre").click(function () {
+//   $(".pre_news").click(function () {
 //     $(`.newsItem`).animate({
 //       left: newsItems * index * -1,
 //     });
@@ -315,6 +315,28 @@ $(function () {
 //     });
 //   });
 // });
+$(document).ready(function () {
+  // console.log("jQuery is working");
+  $(".carousel").slick({
+    arrows: true, // 顯示左右箭頭
+    dots: true, // 底部顯示小點
+    infinite: true, // 循環播放
+    speed: 500, // 切換速度
+    slidesToShow: 1, // 每次顯示一張圖片
+    slidesToScroll: 1, // 每次滑動一張圖片
+    prevArrow: $(".pre_news"), // 自訂上一頁箭頭
+    nextArrow: $(".next_news"), // 自訂下一頁箭頭
+    responsive: [
+      {
+        breakpoint: 768, // 手機尺寸以下啟用
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  });
+});
 
 // ===============跳轉 button ==================
 $(function () {
