@@ -10,7 +10,7 @@ body {
   color: #756659;
 }
 header {
-  height: 70px;
+  height: 100px;
   background-color: #f4e9e3;
   width: 100%; 
   display: flex;
@@ -315,11 +315,26 @@ display: none;
   font-size: 30px;
  
 }
+/* .headerAll{
+
+} */
 .item > button > span{  
   font-size: 0; 
+  
   }
+  .item > button {
+    display: flex;
+    align-items: center;  /* 垂直置中 */
+    justify-content: center;
+    height: 100%; /* 或指定固定高度，例如 50px */
+  }
+  
   .item > button .icon-color {
     color: #756659; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;  /* 可調整讓 icon 置中 */
   }
   .cover {
     height: auto;
@@ -413,6 +428,7 @@ gap: 15px;
   }
   .headerAll{
     position: fixed;
+    justify-content: center;
   }
   .hamburgerAll .hamburger {
     /* background-color: #f00; */
